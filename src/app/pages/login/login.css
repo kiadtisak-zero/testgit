@@ -1,0 +1,170 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* กล่อง */
+.box {
+  position: absolute;
+  right: 20%;
+  top: 10%;
+  width: 50%;
+  height: 80%;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* toggle */
+.toggle {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  position: relative;
+}
+
+.toggle button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* slider */
+.slider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background: #7986cb;
+  transition: 0.3s;
+}
+
+.slider.right {
+  left: 50%;
+}
+
+/* slide container */
+.form-container {
+  display: flex;
+  width: 200%;
+  flex: 1;
+  min-height: 0;
+  transition: transform 0.5s ease-in-out;
+}
+
+.form-container.move {
+  transform: translateX(-50%);
+}
+
+/* form */
+.form {
+  width: 50%;
+  padding: 30px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: flex-start;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+/* Hide scrollbar */
+.form::-webkit-scrollbar {
+  display: none;
+}
+
+.form {
+  scrollbar-width: none;
+}
+
+/* title */
+.txtlogin {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* input */
+.form input {
+  width: 55%;
+  max-width: 320px;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* button */
+.buttonlogin {
+  margin-top: 25px;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #7986cb, #5c6bc0);
+  border: none;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttonlogin:hover {
+  transform: scale(1.05);
+}
+
+.txttoggle {
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  margin: 12px 0;
+  padding: 12px;
+
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+
+  transition: 0.3s;
+}
+
+/* icon */
+.input-group span {
+  margin-right: 10px;
+  color: #7986cb;
+  font-size: 20px;
+}
+
+/* input */
+.input-group input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+}
+
+.input-group:focus-within {
+  border-color: #7986cb;
+  box-shadow: 0 0 8px #7986cb;
+}
+
+.txtback {
+  position: absolute;
+  left: 20px;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+}

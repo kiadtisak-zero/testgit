@@ -1,0 +1,63 @@
+<div class="box">
+
+  <!-- toggle -->
+  <div class="toggle">
+    <button (click)="isLogin = true" class="txttoggle" >Login</button>
+    <button (click)="isLogin = false" class="txttoggle">Sign Up</button>
+    <div class="slider" [class.right]="!isLogin"></div>
+  </div>
+
+  <!-- slide container -->
+  <div class="form-container" [class.move]="!isLogin">
+
+    <!-- LOGIN -->
+    <div class="form">
+      <p class="txtlogin">LOGIN</p>
+        <div class="input-group">
+            <span class="material-icons">person</span>
+            <input type="text" placeholder="Username" >
+        </div>
+        <div class="input-group">
+            <span class="material-icons">lock</span>
+            <input type="password" placeholder="Password">
+        </div> 
+        <button class="buttonlogin" routerLink="/game">Login</button>
+    </div>
+
+    <!-- SIGN UP -->
+    <div class="form">
+      <p class="txtlogin">SIGN UP</p>
+      <div class="input-group">
+            <span class="material-icons">email</span>
+            <input type="text" placeholder="Email">
+      </div>
+      <div class="input-group">
+        <span class="material-icons">person</span>
+        <input type="text" placeholder="First Name">
+      </div>
+      <div class="input-group">
+        <span class="material-icons">person</span>
+        <input type="text" placeholder="Last Name">
+      </div>
+      <div class="input-group">
+        <span class="material-icons">person</span>
+        <input type="text" placeholder="Username" >
+      </div>
+      <div class="input-group">
+        <span class="material-icons">lock</span>
+        <input type="password" placeholder="Password">
+      </div>
+      <div class="input-group">
+        <span class="material-icons">lock</span>
+        <input type="password" placeholder="Confirm Password">
+      </div>
+      <button class="buttonlogin" routerLink="/game">Sign Up</button>
+    </div>
+
+  </div>
+
+</div>
+
+<div>
+  <p class="txtback" routerLink="/">BACK</p>
+</div>
