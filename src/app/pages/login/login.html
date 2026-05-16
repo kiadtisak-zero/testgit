@@ -15,13 +15,13 @@
       <p class="txtlogin">LOGIN</p>
         <div class="input-group">
             <span class="material-icons">person</span>
-            <input type="text" placeholder="Username" >
+            <input type="text" placeholder="Username"  [(ngModel)]="loginData.username">
         </div>
         <div class="input-group">
             <span class="material-icons">lock</span>
-            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Password" [(ngModel)]="loginData.password">
         </div> 
-        <button class="buttonlogin" routerLink="/game">Login</button>
+        <button class="buttonlogin" routerLink="/selectgame" (click)="onLogin()">Login</button>
     </div>
 
     <!-- SIGN UP -->
@@ -29,29 +29,29 @@
       <p class="txtlogin">SIGN UP</p>
       <div class="input-group">
             <span class="material-icons">email</span>
-            <input type="text" placeholder="Email">
+            <input type="text" placeholder="Email" [(ngModel)]="registerData.email">
       </div>
       <div class="input-group">
         <span class="material-icons">person</span>
-        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="First Name" [(ngModel)]="registerData.fname">
       </div>
       <div class="input-group">
         <span class="material-icons">person</span>
-        <input type="text" placeholder="Last Name">
+        <input type="text" placeholder="Last Name" [(ngModel)]="registerData.lname">
       </div>
       <div class="input-group">
         <span class="material-icons">person</span>
-        <input type="text" placeholder="Username" >
+        <input type="text" placeholder="Username" [(ngModel)]="registerData.username" >
       </div>
       <div class="input-group">
         <span class="material-icons">lock</span>
-        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Password" [(ngModel)]="registerData.password">
       </div>
-      <div class="input-group">
+      <!-- <div class="input-group">
         <span class="material-icons">lock</span>
-        <input type="password" placeholder="Confirm Password">
-      </div>
-      <button class="buttonlogin" routerLink="/game">Sign Up</button>
+        <input type="password" placeholder="Confirm Password" [(ngModel)]="registerData.confirmPassword">
+      </div> -->
+      <button class="buttonlogin" routerLink="/selectgame" (click)="onRegister()">Sign Up</button>
     </div>
 
   </div>
