@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Auth } from '../../services/auth';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   imports: [RouterLink,FormsModule],
@@ -11,10 +12,9 @@ import { FormsModule } from '@angular/forms';
 export class Login {
 
   isLogin: boolean = true;
-  islogin: boolean = true;
 
   loginData = {
-    username: '',
+    login: '',
     password: '',
   };
 
@@ -32,18 +32,21 @@ export class Login {
   }
 
 
-    constructor(private auth: Auth) {}
+    constructor(private auth: Auth , private router: Router) {}
 
-  onLogin() {
-    this.auth.login(this.loginData).subscribe({
-      next: (res) => {
-        console.log('Login success', res);
-      },
-      error: (err) => {
-        console.error('Login error', err);
-      }
-    });
-  }
+onLogin() {
+  this.auth.login(this.loginData).subscribe({
+    next: (res: any) => {
+      localStorage.setItem('token', res.token); // ✅ เก็บ token
+      localStorage.setItem('user', JSON.stringify(res.user)); // ✅ เก็บ user
+
+      this.router.navigate(['/admin']);
+    },
+    error: () => {
+      alert('Login failed');
+    } 
+  });
+}
 
   onRegister() {
     this.auth.register(this.registerData).subscribe({
@@ -57,3 +60,4 @@ export class Login {
   }
 
 }
+
